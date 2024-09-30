@@ -1,0 +1,23 @@
+# Nom pour le workflow
+name: Workflow Push
+
+# On précise quel est le déclencheur de notre workflow
+on: push
+
+jobs:
+  # On définit la 1re action à exécuter :
+  premier-job:
+    # On précise le système d'exploitation sur lequel notre job va s'exécuter :
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer notre application
+        uses: actions/checkout@v4
+
+      - name: Installer les dépendances
+        run: npm install
+        
+      - name: Build notre application
+        run: npm run build
+
+      - name: Tester notre application
+        run: npm run test
