@@ -21,3 +21,10 @@ jobs:
 
       - name: Tester notre application
         run: npm run test
+
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Etape X
+        run: echo "2e job"
+        
