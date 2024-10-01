@@ -18,3 +18,10 @@ jobs:
       - name: Dire au revoir
         run: echo "Au revoir"
         
+  
+  second-job:
+    needs: premier-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Etape X
+        run: echo "Je suis un second job"
