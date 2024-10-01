@@ -1,6 +1,7 @@
-
+# Nom pour le workflow
 name: Mon Context
 
+# On précise quel est le déclencheur de notre workflow
 on: workflow_dispatch
 
 jobs:
@@ -8,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Infos de mon context github
-      - run: echo "${{ toJson(github) }}"
-      
+        run: echo "${{ toJson(github) }}"
+
