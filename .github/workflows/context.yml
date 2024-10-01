@@ -11,3 +11,11 @@ jobs:
       - name: Infos de mon context github
         run: echo "${{ toJson(github) }}"
 
+      - name: Mes variables d'environnement
+        env:
+          MA_VARIABLE: ${{ vars.MA_VARIABLE }}
+          MY_SECRET: ${{ secrets.MY_SECRET }}
+        run: |
+          echo "Le secret est ${{ MY_SECRET }}"
+          echo "La variable est ${{ MA_VARIABLE }}"
+
